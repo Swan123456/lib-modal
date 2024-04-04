@@ -1,1 +1,1 @@
-export { default as DataInput } from './lib/Modal';
+export { default as Modal } from './lib/Modal';

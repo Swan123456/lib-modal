@@ -6,15 +6,9 @@ const App = () => {
 	const [modalOpened, setModalOpened] = useState<boolean>(false)
 	const [errorModalOpened, setErrorModalOpened] = useState<boolean>(false)
 
-		//! modal params
-		const modalTitle = 'Success !'
-		const modalErrTitle = 'Error !'
+	const modalTitle = 'Success !'
+	const modalErrTitle = 'Error !'
 
-	//! Fermer le modal
-	/**
-	 * La fonction `handleCloseModal` permet de fermer le modal qui affiche
-	 * les détails de l'employé ou un message d'erreur.
-	 */
 	const handleCloseModal = () => {
 		setModalOpened(false)
 		setErrorModalOpened(false)

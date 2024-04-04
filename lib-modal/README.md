@@ -1,30 +1,83 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# HRnet Modal
 
-Currently, two official plugins are available:
+## How to Install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To install the package, you can use the following command : 
 
-## Expanding the ESLint configuration
+`npm install -modal`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Package Contents
 
-- Configure the top-level `parserOptions` property like this:
+This package contains the following components :
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+<Modal /> // React component that displays a modal dialog box.
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to Import
+
+To import the component into your code, 
+use the following syntax:
+
+```
+import Modal from 'hrnet-modal';
+```
+
+## Example
+
+```
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'hrnet-modal';
+
+const App = () => {
+  const [modalOpened, setModalOpened] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalOpened(false);
+  };
+
+  return (
+    <div>
+      <button onClick={() => setModalOpened(true)}>Open Modal</button>
+      <Modal
+        title="Success!"
+        opened={modalOpened}
+        onClose={handleCloseModal}
+        content="Yo!"
+        btnText="Close"
+      />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+```
+
+## Component Parameters
+
+### DataInput
+
+/**
+ * Modal component
+ * @param {string} title - Title of the modal.
+ * @param {boolean} opened - Indicates whether the modal is open or closed.
+ * @param {() => void} onClose - Function to call when the modal is closed.
+ * @param {string} content - Content to display in the modal.
+ * @param {string} btnText - Text to display on the close button.
+ * @returns {JSX.Element} - React component.
+ * @summary React component that displays a modal dialog box.
+ */
+
+
+
+## Summary
+The Modal component is a React component that displays a modal dialog box with customizable title, content, and close button. It provides a simple and convenient way to implement modal functionality in your React applications.
+
+
+
+
+
+
